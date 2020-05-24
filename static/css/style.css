@@ -1,0 +1,239 @@
+/*
+	normal.scss - a CSS normalizer (cf. CSS reset).
+	
+	Provides a normalized environment for new designs and nice defaults for
+	styling simple documents.
+
+	Author: Miikka Koskinen <miikka.koskinen@iki.fi>
+*/
+/* Box model reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Text styling */
+body {
+  font-size: 1em;
+  font-family: "Palatino", "Palatino Linotype", "Georgia", serif;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+p, ul, ol, blockquote, pre {
+  margin-bottom: 1.4em;
+}
+
+/* vim: set ts=4 sw=4 noet: */
+body {
+  font-family: "Microsoft JhengHei", 'Lato', 'Arial', sans-serif;
+  background-image: url("../img/top-bg.png"), url("../img/body-bottom-bg.png");
+  background-position: center top, center 105%;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-color: #000;
+  padding-bottom: 5%;
+}
+
+body > a {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  img {
+    max-width: 90%;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box .txt {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -20%;
+}
+
+.img-box .txt .main {
+  position: relative;
+}
+
+.link-box {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 20px solid transparent;
+  border: 30px solid transparent;
+  -o-border-image: url("../img/btn-border.png") 50 30 stretch;
+     border-image: url("../img/btn-border.png") 50 30 stretch;
+  border-width: 67px 20px 20px;
+  margin-top: -4%;
+}
+
+.link-box ul {
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3% 0;
+}
+
+.link-item {
+  width: calc(50% - 60px);
+  background-image: url("../img/btn-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 15px 6%;
+  min-height: 83px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link-item3 {
+  background-image: url("../img/ie-bg.png");
+}
+
+.link-item:nth-child(2n+1) {
+  margin-right: 2.5%;
+}
+
+.link-item:nth-child(2n+2) {
+  margin-left: 2.5%;
+}
+
+.link-item p {
+  color: #fef09b;
+}
+
+.link-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6% 10%;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  text-shadow: 0 0 2px #999;
+}
+
+.link-item a:hover {
+  text-decoration: none;
+}
+
+.link-item .img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.link-item .txt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.link-item .txt h2 {
+  font-size: 24px;
+}
+
+.link-item .txt p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .link-box ul {
+    padding: 0;
+  }
+  .link-item {
+    margin: 15px 1%;
+    width: calc(50% - 2%);
+  }
+  .link-item:nth-child(2n+1) {
+    margin-right: 1%;
+  }
+  .link-item:nth-child(2n+2) {
+    margin-left: 1%;
+  }
+  .link-item a {
+    padding: 15px 20px;
+  }
+  .link-item .img {
+    width: 40px;
+  }
+  .link-item .txt h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .link-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-width: 45px 20px 20px;
+  }
+  .link-item {
+    width: 270px;
+    height: 68px;
+    margin-top: 0;
+  }
+  .link-item:nth-child(2n+1) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .link-item:nth-child(2n+2) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .link-item:last-child {
+    margin-bottom: 0;
+  }
+  .link-item a {
+    padding: 10px 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
